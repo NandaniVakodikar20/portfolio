@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@tsparticles/engine": "^4.3.2",
+    "@tsparticles/react": "^4.3.2",
     "aos": "^2.3.4",
     "bootstrap": "^5.3.8",
     "framer-motion": "^12.42.2",
@@ -20,7 +22,6 @@
     "react-intersection-observer": "^10.1.0",
     "react-router-dom": "^7.18.1",
     "react-scroll": "^1.9.3",
-    "react-tsparticles": "^2.12.2",
     "react-type-animation": "^3.2.0",
     "tsparticles": "^4.3.2"
   },

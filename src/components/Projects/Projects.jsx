@@ -89,9 +89,9 @@ function Projects() {
 
                 <h3>{project.title}</h3>
 
-                <p>
+                {/* <p>
                   Project Screenshot
-                </p>
+                </p> */}
 
               </div>
 

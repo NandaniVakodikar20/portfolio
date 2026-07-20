@@ -1,4 +1,4 @@
-import heroImage from "../../assets/images/hero.png";
+import heroImage from "../../assets/images/nandani.jpeg";
 import "./Hero.css";
 
 function HeroCard() {
@@ -10,7 +10,7 @@ function HeroCard() {
         Available for Internship
       </div>
 
-      <img src={heroImage} alt="Nandani Vakodikar" />
+     <img src={heroImage} alt="Nandani Vakodikar" />
 
       <h3>Nandani Vakodikar</h3>
 
