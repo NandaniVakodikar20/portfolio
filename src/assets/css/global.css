@@ -1,0 +1,21 @@
+:root{
+
+  --bg-color:#030712;
+  --card-color:#111827;
+  --primary:#3B82F6;
+  --secondary:#8B5CF6;
+  --accent:#06B6D4;
+
+  --white:#FFFFFF;
+  --light:#D1D5DB;
+  --gray:#9CA3AF;
+
+  --border:rgba(255,255,255,.08);
+
+  --shadow:0 10px 40px rgba(0,0,0,.35);
+
+  --radius:20px;
+
+  --transition:.35s ease;
+
+}
