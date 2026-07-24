@@ -2,39 +2,51 @@ import "./Education.css";
 
 function Education() {
 
-  const education = [
-    {
-      year: "2026",
-      degree: "Master of Computer Applications (MCA)",
-      institute: "Uka Tarsadia University",
-      score: "Currently Pursuing"
-    },
-    {
-      year: "2025",
-      degree: "Bachelor of Computer Applications (BCA)",
-      institute: "Veer Narmad South Gujarat University",
-      score: "77%"
-    },
-    {
-      year: "2022",
-      degree: "Higher Secondary (HSC)",
-      institute: "GSEB",
-      score: "81%"
-    },
-    {
-      year: "2020",
-      degree: "Secondary School (SSC)",
-      institute: "GSEB",
-      score: "72%"
-    }
-  ];
+const education = [
+  {
+    year: "2025 - Present",
+    degree: "Master of Computer Applications (MCA)",
+    institute:
+      "Shrimad Rajchandra Institute of Management & Computer Application, Uka Tarsadia University, Bardoli, Gujarat",
+    score: "Currently Pursuing",
+  },
+
+  {
+    year: "2022 - 2025",
+    degree: "Bachelor of Computer Applications (BCA)",
+    institute:
+      "Smt. Tanuben & Dr. Manubhai Trivedi College of Information Science, Surat",
+    score: "CGPA: 7.70",
+  },
+
+  {
+    year: "2022",
+    degree: "Higher Secondary Certificate (HSC)",
+    institute:
+      "Gyanjyot Hindi Vidyalaya, Surat, Gujarat",
+    score: "81.28%",
+  },
+
+  {
+    year: "2020",
+    degree: "Secondary School Certificate (SSC)",
+    institute:
+      "Suman High School No. 5, Surat, Gujarat",
+    score: "72.33%",
+  },
+];
 
   return (
     <section className="education" id="education">
 
-      <h2 className="section-title">
-        My <span>Education</span>
-      </h2>
+     <h2 className="section-title">
+    My <span>Education</span>
+</h2>
+
+<p className="education-description">
+    My academic journey has provided me with strong fundamentals in computer science,
+    software development, databases and modern web technologies.
+</p>
 
       <div className="timeline">
 

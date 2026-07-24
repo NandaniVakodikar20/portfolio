@@ -11,7 +11,7 @@ function Hero() {
       <div className="hero-left">
 
         <p className="hero-subtitle">
-          👋 Hello, I'm
+           Hello, I'm
         </p>
 
         <h1 className="hero-title">
@@ -44,19 +44,19 @@ function Hero() {
   development skills.
 </p>
 
-      <div className="hero-buttons">
+  <div className="hero-buttons">
 
   <a href="#projects" className="primary-btn">
     Explore Projects
   </a>
 
- <a
-  href="/resume/MCA_NANDANI_VAKODIKAR.pdf"
-  download="Nandani_Vakodikar_Resume.pdf"
-  className="secondary-btn"
->
-  Download Resume
-</a>
+  <a
+    href="/resume/MCA_NANDANI_VAKODIKAR.pdf"
+    download
+    className="secondary-btn"
+  >
+    Download Resume
+  </a>
 
 </div>
 

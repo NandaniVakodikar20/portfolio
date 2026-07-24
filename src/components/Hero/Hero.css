@@ -249,3 +249,164 @@
     font-size:0.9rem;
     text-align:center;
 }
+
+/* ===========================
+   RESPONSIVE HERO
+=========================== */
+
+/* Laptop */
+@media (max-width: 1200px) {
+
+.hero{
+    padding:120px 6% 80px;
+    gap:50px;
+}
+
+.hero-title{
+    font-size:60px;
+}
+
+.hero-role{
+    font-size:30px;
+}
+
+.developer-card{
+    width:320px;
+}
+
+}
+
+/* Tablet */
+@media (max-width: 992px){
+
+.hero{
+    flex-direction:column-reverse;
+    justify-content:center;
+    text-align:center;
+    gap:50px;
+    padding:140px 6% 80px;
+}
+
+.hero-left,
+.hero-right{
+    width:100%;
+}
+
+.hero-description{
+    max-width:700px;
+    margin:20px auto;
+}
+
+.hero-buttons{
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.developer-card{
+    width:340px;
+}
+
+}
+
+/* Mobile */
+@media (max-width:768px){
+
+.hero{
+    padding:120px 20px 70px;
+}
+
+.hero-title{
+    font-size:48px;
+}
+
+.hero-role{
+    font-size:26px;
+}
+
+.hero-subtitle{
+    font-size:18px;
+}
+
+.hero-description{
+    font-size:16px;
+    line-height:1.7;
+}
+
+.hero-buttons{
+    width:100%;
+    flex-direction:column;
+}
+
+.primary-btn,
+.secondary-btn{
+    width:100%;
+    text-align:center;
+}
+
+.developer-card{
+    width:100%;
+    max-width:340px;
+    margin:auto;
+    padding:25px;
+}
+
+.developer-card img{
+    width:150px;
+    height:150px;
+}
+
+.developer-card h3{
+    font-size:26px;
+}
+
+}
+
+/* Small Mobile */
+@media (max-width:480px){
+
+.hero{
+    padding:110px 16px 60px;
+}
+
+.hero-title{
+    font-size:38px;
+}
+
+.hero-role{
+    font-size:22px;
+}
+
+.hero-description{
+    font-size:15px;
+}
+
+.hero-buttons{
+    gap:15px;
+}
+
+.primary-btn,
+.secondary-btn{
+    padding:14px 20px;
+    font-size:15px;
+}
+
+.developer-card{
+    max-width:300px;
+    border-radius:20px;
+}
+
+.developer-card img{
+    width:130px;
+    height:130px;
+}
+
+.status{
+    font-size:12px;
+    padding:7px 14px;
+}
+
+.project-badge{
+    font-size:13px;
+}
+
+}

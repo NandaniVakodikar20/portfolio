@@ -12,10 +12,10 @@ function Projects() {
       status: "🚧 In Development",
 
       description:
-        "A full-stack salon booking platform built using the MERN Stack with separate Customer, Owner, Admin, and Guest modules. The application provides pincode-based salon search, appointment booking, appointment rescheduling, service management, and responsive dashboards. REST APIs enable seamless frontend-backend communication while MongoDB efficiently manages application data.",
+        "A full-stack salon booking platform built using the MERN Stack with separate Customer, Owner, Admin and Guest modules. The application provides pincode-based salon search, appointment booking, appointment rescheduling, service management, responsive dashboards and REST APIs.",
 
       tech: [
-        "React.js",
+        "React",
         "Node.js",
         "Express.js",
         "MongoDB",
@@ -23,10 +23,16 @@ function Projects() {
         "REST API",
         "Git",
         "GitHub"
-      ]
+      ],
+
+      github: "https://github.com/NandaniVakodikar20/EliteSalon",
+
+      image: ""
+
     },
 
     {
+
       title: "PetCareHub – Online Veterinary System",
 
       featured: false,
@@ -34,7 +40,7 @@ function Projects() {
       status: "📚 Academic Project",
 
       description:
-        "A web-based veterinary management system developed using PHP and MySQL. The application allows users to book pet appointments, manage pet records, browse pet-related products, and perform CRUD operations through separate user and admin modules. The responsive interface ensures a smooth and user-friendly experience.",
+        "A web-based veterinary management system developed using PHP and MySQL. It allows users to book pet appointments, manage pet records, browse pet products and includes separate Admin and User modules with complete CRUD functionality.",
 
       tech: [
         "PHP",
@@ -43,7 +49,12 @@ function Projects() {
         "CSS3",
         "JavaScript",
         "Bootstrap"
-      ]
+      ],
+
+      github: "",
+
+      image: ""
+
     }
 
   ];
@@ -78,22 +89,34 @@ function Projects() {
 
             <div className="project-image">
 
-              {project.featured && (
-                <div className="featured-badge">
-                  ⭐ Featured Project
+              {project.image ? (
+
+                <img
+                  src={project.image}
+                  alt={project.title}
+                />
+
+              ) : (
+
+                <div className="image-placeholder">
+
+                  <h3>{project.title}</h3>
+
+                  <p>Project Screenshot</p>
+
                 </div>
+
               )}
 
-              {/* Screenshot yaha add karna */}
-              <div className="image-placeholder">
+              {project.featured && (
 
-                <h3>{project.title}</h3>
+                <div className="featured-badge">
 
-                {/* <p>
-                  Project Screenshot
-                </p> */}
+                  ⭐ Featured Project
 
-              </div>
+                </div>
+
+              )}
 
             </div>
 
@@ -124,6 +147,21 @@ function Projects() {
                 ))}
 
               </div>
+
+           {project.github && (
+  <div className="project-buttons">
+
+    <a
+      href={project.github}
+      target="_blank"
+      rel="noreferrer"
+      className="github-btn"
+    >
+      View on GitHub
+    </a>
+
+  </div>
+)}
 
             </div>
 

@@ -42,18 +42,20 @@
     border-radius:22px;
     border:1px solid rgba(255,255,255,.08);
     text-align:center;
-    transition:.35s;
+    transition:.35s ease;
 }
 
 .certificate-card:hover{
     transform:translateY(-10px);
-    box-shadow:0 20px 45px rgba(59,130,246,.20);
+    border-color:#3B82F6;
+    box-shadow:0 20px 45px rgba(59,130,246,.25);
 }
 
 .certificate-icon{
     font-size:55px;
     color:#3B82F6;
     margin-bottom:20px;
+    transition:.3s;
 }
 
 .certificate-card h3{
@@ -87,4 +89,7 @@
     font-size:38px;
 }
 
+}
+.certificate-card:hover .certificate-icon{
+    transform:scale(1.15);
 }

@@ -24,20 +24,20 @@ import { VscVscode } from "react-icons/vsc";
 
 function Skills() {
   const categories = [
-    {
-      title: "Frontend",
-      icon: "🎨",
-      skills: [
-        { icon: <FaReact />, name: "React" },
-        { icon: <SiHtml5 />, name: "HTML5" },
-        { icon: <SiCss />, name: "CSS3" },
-        { icon: <SiJavascript />, name: "JavaScript" },
-        { icon: <FaBootstrap />, name: "Bootstrap" },
-      ],
-    },
+  {
+  title: "Frontend",
+  color: "#3B82F6",
+  skills: [
+    { icon: <FaReact />, name: "React" },
+    { icon: <SiHtml5 />, name: "HTML5" },
+    { icon: <SiCss />, name: "CSS3" },
+    { icon: <SiJavascript />, name: "JavaScript" },
+    { icon: <FaBootstrap />, name: "Bootstrap" },
+  ],
+},
     {
       title: "Backend",
-      icon: "⚙️",
+
       skills: [
         { icon: <FaNodeJs />, name: "Node.js" },
         { icon: <SiExpress />, name: "Express.js" },
@@ -47,7 +47,6 @@ function Skills() {
     },
     {
       title: "Database",
-      icon: "🗄️",
       skills: [
         { icon: <SiMongodb />, name: "MongoDB" },
         { icon: <SiMysql />, name: "MySQL" },
@@ -55,7 +54,6 @@ function Skills() {
     },
     {
       title: "Tools",
-      icon: "🛠️",
       skills: [
         { icon: <FaGitAlt />, name: "Git" },
       { icon: <VscVscode />, name: "VS Code" },
@@ -64,7 +62,6 @@ function Skills() {
     },
     {
       title: "Currently Learning",
-      icon: "📚",
       skills: [{ icon: <FaJava />, name: "Java" }],
     },
   ];
@@ -84,7 +81,11 @@ function Skills() {
 
       <div className="skills-wrapper">
         {categories.map((category, index) => (
-          <div className="category-card" key={index}>
+         <div
+  className="category-card"
+  key={index}
+  style={{ borderTop: `4px solid ${category.color}` }}
+>
             <h3>
               <span>{category.icon}</span> {category.title}
             </h3>

@@ -22,11 +22,11 @@ function HeroCard() {
 
         <span>📍 Surat, Gujarat</span>
 
-        <span>🚀 Open to Work</span>
+        <span> Open to Work</span>
 
       </div>
       <div className="project-badge">
-  🚀 Currently Building <strong>EliteSalon</strong> (MERN Stack)
+   Currently Building <strong>EliteSalon</strong> (MERN Stack)
 </div>
 
     </div>

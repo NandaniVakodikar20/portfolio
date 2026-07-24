@@ -12,10 +12,10 @@ function Contact() {
   return (
     <section className="contact" id="contact">
 
-      <div className="contact-content">
+      <div className="contact-left">
 
         <p className="section-tag">
-          GET IN TOUCH
+          CONTACT
         </p>
 
         <h2 className="section-title">
@@ -23,12 +23,12 @@ function Contact() {
         </h2>
 
         <p className="contact-description">
-          I am currently pursuing MCA and actively looking for Internship and
-          Entry-Level Software Developer opportunities. Feel free to connect
-          with me for collaborations, projects, or career opportunities.
+          I am currently looking for Internship and Entry-Level Software
+          Developer opportunities. Feel free to contact me for projects,
+          collaborations or career opportunities.
         </p>
 
-        <div className="contact-grid">
+        <div className="contact-info">
 
           <div className="info-box">
             <FaEnvelope />
@@ -42,7 +42,7 @@ function Contact() {
             <FaPhone />
             <div>
               <h4>Phone</h4>
-              <span>+91 82004 88821</span>
+              <span>+91 8200488821</span>
             </div>
           </div>
 
@@ -72,6 +72,28 @@ function Contact() {
             rel="noreferrer"
           >
             <FaLinkedin />
+          </a>
+
+        </div>
+
+      </div>
+
+      <div className="contact-right">
+
+        <div className="contact-card">
+
+          <h3>Available for Internship</h3>
+
+          <p>
+            Open to MERN Stack, React.js, Node.js and Full Stack Developer
+            Internship opportunities.
+          </p>
+
+          <a
+            href="mailto:vakodikarnandani@gmail.com"
+            className="contact-btn"
+          >
+            Send Email
           </a>
 
         </div>

@@ -57,7 +57,7 @@ return(
 
 <div className="marquee">
 
-<div className="track">
+<div className="track" aria-label="Technology Stack">
 
 {tech.map((item,index)=>(
 

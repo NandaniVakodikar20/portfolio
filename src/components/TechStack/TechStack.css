@@ -1,90 +1,163 @@
 .tech-section{
-
-padding:50px 0;
-
-overflow:hidden;
-
+    padding:70px 0;
+    overflow:hidden;
+    position:relative;
 }
 
 .marquee{
-
-overflow:hidden;
-
-white-space:nowrap;
-
+    width:100%;
+    overflow:hidden;
+    white-space:nowrap;
 }
 
 .track{
+    display:flex;
+    align-items:center;
+    width:max-content;
+    animation:scroll 30s linear infinite;
+}
 
-display:flex;
+.track:hover{
+    animation-play-state:paused;
+}
 
-width:max-content;
+.tech-card{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    margin:0 15px;
+    padding:14px 22px;
+    border-radius:14px;
+    background:rgba(255,255,255,.05);
+    backdrop-filter:blur(12px);
+    border:1px solid rgba(255,255,255,.08);
+    color:#fff;
+    transition:.3s;
+    flex-shrink:0;
+}
 
-animation:scroll 25s linear infinite;
+.tech-card svg{
+    font-size:28px;
+    color:#3B82F6;
+}
 
+.tech-card span{
+    font-size:17px;
+    font-weight:500;
+}
+
+.tech-card:hover{
+    transform:translateY(-6px);
+    background:#2563EB;
+}
+
+.tech-card:hover svg{
+    color:white;
+}
+
+@keyframes scroll{
+
+0%{
+    transform:translateX(0);
+}
+
+100%{
+    transform:translateX(-50%);
+}
+
+}
+
+/* Laptop */
+
+@media(max-width:1200px){
+
+.tech-card{
+    padding:12px 18px;
+}
+
+}
+
+/* Tablet */
+
+@media(max-width:992px){
+
+.track{
+    animation-duration:22s;
+}
+
+.tech-card{
+    margin:0 12px;
+}
+
+.tech-card span{
+    font-size:16px;
+}
+
+}
+
+/* Mobile */
+
+@media(max-width:768px){
+
+.tech-section{
+    padding:50px 0;
+}
+
+.track{
+    animation-duration:18s;
 }
 
 .tech-card{
 
-display:flex;
+padding:10px 16px;
 
-align-items:center;
-
-gap:10px;
-
-margin:0 18px;
-
-padding:14px 22px;
-
-border-radius:14px;
-
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.08);
-
-font-size:18px;
-
-color:white;
-
-transition:.3s;
+margin:0 10px;
 
 }
 
 .tech-card svg{
 
-font-size:30px;
-
-color:#3B82F6;
+font-size:24px;
 
 }
 
-.tech-card:hover{
+.tech-card span{
 
-transform:translateY(-6px);
-
-background:#2563eb;
+font-size:15px;
 
 }
 
-.tech-card:hover svg{
+}
 
-color:white;
+/* Small Mobile */
+
+@media(max-width:480px){
+
+.track{
+
+animation-duration:15s;
 
 }
 
-@keyframes scroll{
+.tech-card{
 
-from{
+padding:8px 14px;
 
-transform:translateX(0);
+margin:0 8px;
+
+border-radius:12px;
 
 }
 
-to{
+.tech-card svg{
 
-transform:translateX(-50%);
+font-size:20px;
+
+}
+
+.tech-card span{
+
+font-size:14px;
 
 }
 

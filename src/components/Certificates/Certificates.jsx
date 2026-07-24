@@ -8,13 +8,13 @@ function Certificates() {
     {
       title: "Introduction to Cloud Computing",
       provider: "Simplilearn SkillUp",
-      year: "2026"
+      year: "2025"
     },
 
     {
       title: "Introduction to DevOps Tools",
       provider: "Simplilearn SkillUp",
-      year: "2026"
+      year: "2025"
     }
 
   ];
@@ -24,7 +24,7 @@ function Certificates() {
     <section className="certificates" id="certificates">
 
       <p className="section-tag">
-        ACHIEVEMENTS
+        CERTIFICATIONS
       </p>
 
       <h2 className="section-title">
@@ -32,8 +32,7 @@ function Certificates() {
       </h2>
 
       <p className="certificate-description">
-        Certifications that reflect my continuous learning journey and interest
-        in modern software development and cloud technologies.
+        I continuously enhance my technical knowledge by completing industry-recognized certifications in cloud computing, DevOps, and modern software development.
       </p>
 
       <div className="certificate-grid">
@@ -42,7 +41,7 @@ function Certificates() {
 
           <div className="certificate-card" key={index}>
 
-            <FaAward className="certificate-icon" />
+            <FaAward className="certificate-icon"/>
 
             <h3>{certificate.title}</h3>
 
