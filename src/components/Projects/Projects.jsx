@@ -25,7 +25,7 @@ function Projects() {
         "GitHub"
       ],
 
-      github: "https://github.com/NandaniVakodikar20/EliteSalon",
+      github: "https://github.com/NandaniVakodikar20/EliteSaloon-BookSmartLookSmart",
 
       image: ""
 
