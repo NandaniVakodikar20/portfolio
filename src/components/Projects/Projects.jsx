@@ -1,180 +1,132 @@
 import "./Projects.css";
+import SectionHeader from "../UI/SectionHeader";
+import ProjectPreview from "./ProjectPreview";
+import { FaGithub, FaCheckCircle, FaStar, FaCodeBranch, FaExternalLinkAlt } from "react-icons/fa";
+import { projectsData } from "../../data/portfolioData";
 
 function Projects() {
-
-  const projects = [
-
-    {
-      title: "EliteSalon – Book Smart, Look Smart",
-
-      featured: true,
-
-      status: "🚧 In Development",
-
-      description:
-        "A full-stack salon booking platform built using the MERN Stack with separate Customer, Owner, Admin and Guest modules. The application provides pincode-based salon search, appointment booking, appointment rescheduling, service management, responsive dashboards and REST APIs.",
-
-      tech: [
-        "React",
-        "Node.js",
-        "Express.js",
-        "MongoDB",
-        "Bootstrap",
-        "REST API",
-        "Git",
-        "GitHub"
-      ],
-
-      github: "https://github.com/NandaniVakodikar20/EliteSaloon-BookSmartLookSmart",
-
-      image: ""
-
-    },
-
-    {
-
-      title: "PetCareHub – Online Veterinary System",
-
-      featured: false,
-
-      status: "📚 Academic Project",
-
-      description:
-        "A web-based veterinary management system developed using PHP and MySQL. It allows users to book pet appointments, manage pet records, browse pet products and includes separate Admin and User modules with complete CRUD functionality.",
-
-      tech: [
-        "PHP",
-        "MySQL",
-        "HTML5",
-        "CSS3",
-        "JavaScript",
-        "Bootstrap"
-      ],
-
-      github: "",
-
-      image: ""
-
-    }
-
-  ];
-
   return (
+    <section className="projects-section" id="projects">
+      <SectionHeader
+        tag="PORTFOLIO HIGHLIGHTS"
+        title="Featured"
+        highlight="Engineering Projects"
+        subtitle="Full-stack web applications built with modern engineering practices, clean modular architecture, and real-world problem solving."
+      />
 
-    <section className="projects" id="projects">
+      <div className="projects-showcase-container">
+        {projectsData.map((project, index) => {
+          const isReversed = index % 2 !== 0;
 
-      <p className="section-tag">
-        MY WORK
-      </p>
-
-      <h2 className="section-title">
-        Featured <span>Projects</span>
-      </h2>
-
-      <p className="project-description">
-        Here are some of the projects I have developed during my academic journey
-        and personal learning. These projects demonstrate my ability to build
-        scalable, responsive and user-friendly web applications using modern
-        technologies.
-      </p>
-
-      <div className="projects-grid">
-
-        {projects.map((project, index) => (
-
-          <div
-            className={`project-card ${project.featured ? "featured-card" : ""}`}
-            key={index}
-          >
-
-            <div className="project-image">
-
-              {project.image ? (
-
-                <img
-                  src={project.image}
-                  alt={project.title}
-                />
-
-              ) : (
-
-                <div className="image-placeholder">
-
-                  <h3>{project.title}</h3>
-
-                  <p>Project Screenshot</p>
-
+          return (
+            <article
+              key={project.id}
+              className={`project-feature-row ${isReversed ? "reversed-layout" : ""} ${
+                project.featured ? "spotlight-featured" : ""
+              }`}
+            >
+              {/* Left Column (Visual Showcase) */}
+              <div className="project-visual-col">
+                <div className="project-visual-wrapper">
+                  <div
+                    className="visual-glow-backdrop"
+                    style={{ background: project.accentColor }}
+                  />
+                  <ProjectPreview project={project} />
                 </div>
-
-              )}
-
-              {project.featured && (
-
-                <div className="featured-badge">
-
-                  ⭐ Featured Project
-
-                </div>
-
-              )}
-
-            </div>
-
-            <div className="project-content">
-
-              <div className="project-status">
-
-                {project.status}
-
               </div>
 
-              <p>
+              {/* Right Column (Editorial Information) */}
+              <div className="project-info-col">
+                <div className="project-meta-strip">
+                  {project.featured && (
+                    <span className="featured-pill">
+                      <FaStar className="star-icon" /> Featured Project
+                    </span>
+                  )}
+                  <span className="project-type-pill">{project.type}</span>
+                  <span className="project-status-pill">{project.status}</span>
+                </div>
 
-                {project.description}
+                <div className="project-headline-block">
+                  <h3 className="project-title">{project.title}</h3>
+                  <span className="project-subtitle">{project.subtitle}</span>
+                </div>
 
-              </p>
+                <p className="project-overview-text">{project.description}</p>
 
-              <div className="tech-list">
+                {/* Contribution & Architecture */}
+                <div className="project-contribution-box">
+                  <div className="contribution-header">
+                    <FaCodeBranch className="contrib-icon" />
+                    <h4>My Architecture & Contribution</h4>
+                  </div>
+                  <p>{project.contribution}</p>
+                </div>
 
-                {project.tech.map((tech, i) => (
+                {/* Key Features List */}
+                <div className="project-features-list">
+                  <h4 className="features-title">Key Implemented Modules:</h4>
+                  <ul>
+                    {project.features.map((feature, fIdx) => (
+                      <li key={fIdx}>
+                        <FaCheckCircle className="feature-check" />
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
-                  <span key={i}>
+                {/* Tech Stack Pills */}
+                <div className="project-tech-strip">
+                  {project.techStack.map((tech, tIdx) => (
+                    <span key={tIdx} className="tech-tag-pill">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
 
-                    {tech}
+                {/* Action Links */}
+                <div className="project-actions-row">
+                  {project.github ? (
+                    <a
+                      href={project.github}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-primary project-action-btn"
+                    >
+                      <FaGithub />
+                      <span>View on GitHub</span>
+                    </a>
+                  ) : (
+                    <span className="academic-notice-tag">
+                      Academic Institutional Repository
+                    </span>
+                  )}
 
-                  </span>
-
-                ))}
-
+                  {project.demo ? (
+                    <a
+                      href={project.demo}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="btn-secondary project-action-btn"
+                    >
+                      <FaExternalLinkAlt />
+                      <span>Live Demo</span>
+                    </a>
+                  ) : (
+                    <span className="demo-status-text">
+                      {project.featured ? "Local & Sandbox Active" : "Classroom Evaluated"}
+                    </span>
+                  )}
+                </div>
               </div>
-
-           {project.github && (
-  <div className="project-buttons">
-
-    <a
-      href={project.github}
-      target="_blank"
-      rel="noreferrer"
-      className="github-btn"
-    >
-      View on GitHub
-    </a>
-
-  </div>
-)}
-
-            </div>
-
-          </div>
-
-        ))}
-
+            </article>
+          );
+        })}
       </div>
-
     </section>
-
   );
-
 }
 
 export default Projects;

@@ -1,6 +1,6 @@
 import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
-import TechStack from "./components/TechStack/TechStack";
+import TechMarquee from "./components/TechMarquee/TechMarquee";
 import About from "./components/About/About";
 import Skills from "./components/Skills/Skills";
 import Projects from "./components/Projects/Projects";
@@ -11,18 +11,20 @@ import Footer from "./components/Footer/Footer";
 
 function App() {
   return (
-    <>
+    <div className="portfolio-app-root">
       <Navbar />
-      <Hero />
-      <TechStack/>
+      <main>
+        <Hero />
+        <TechMarquee />
         <About />
         <Skills />
         <Projects />
         <Education />
         <Certificates />
         <Contact />
-        <Footer />
-    </>
+      </main>
+      <Footer />
+    </div>
   );
 }
 

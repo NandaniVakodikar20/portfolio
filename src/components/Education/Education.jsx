@@ -1,79 +1,76 @@
 import "./Education.css";
+import SectionHeader from "../UI/SectionHeader";
+import {
+  FaCalendarAlt,
+  FaMapMarkerAlt,
+  FaAward,
+  FaCheck,
+} from "react-icons/fa";
+import { educationData } from "../../data/portfolioData";
 
 function Education() {
-
-const education = [
-  {
-    year: "2025 - Present",
-    degree: "Master of Computer Applications (MCA)",
-    institute:
-      "Shrimad Rajchandra Institute of Management & Computer Application, Uka Tarsadia University, Bardoli, Gujarat",
-    score: "Currently Pursuing",
-  },
-
-  {
-    year: "2022 - 2025",
-    degree: "Bachelor of Computer Applications (BCA)",
-    institute:
-      "Smt. Tanuben & Dr. Manubhai Trivedi College of Information Science, Surat",
-    score: "CGPA: 7.70",
-  },
-
-  {
-    year: "2022",
-    degree: "Higher Secondary Certificate (HSC)",
-    institute:
-      "Gyanjyot Hindi Vidyalaya, Surat, Gujarat",
-    score: "81.28%",
-  },
-
-  {
-    year: "2020",
-    degree: "Secondary School Certificate (SSC)",
-    institute:
-      "Suman High School No. 5, Surat, Gujarat",
-    score: "72.33%",
-  },
-];
-
   return (
-    <section className="education" id="education">
+    <section className="education-section" id="education">
+      <SectionHeader
+        tag="ACADEMIC BACKGROUND"
+        title="Education &"
+        highlight="Qualifications"
+        subtitle="My academic foundation has instilled rigorous computer science fundamentals, analytical thinking, and software engineering discipline."
+      />
 
-     <h2 className="section-title">
-    My <span>Education</span>
-</h2>
+      <div className="education-timeline-container">
+        <div className="timeline-spine-track" />
 
-<p className="education-description">
-    My academic journey has provided me with strong fundamentals in computer science,
-    software development, databases and modern web technologies.
-</p>
+        <div className="timeline-cards-list">
+          {educationData.map((edu, index) => (
+            <div className="timeline-entry-row" key={index}>
+              {/* Timeline Indicator Node */}
+              <div className="timeline-node">
+                <div className="node-outer-ring">
+                  <div className="node-inner-dot" />
+                </div>
+              </div>
 
-      <div className="timeline">
+              {/* Timeline Content Card */}
+              <div className="timeline-content-card editorial-card">
+                <div className="card-top-meta">
+                  <div className="period-badge">
+                    <FaCalendarAlt className="meta-icon" />
+                    <span>{edu.period}</span>
+                  </div>
 
-        {education.map((item, index) => (
+                  <div className="score-badge">
+                    <FaAward className="meta-icon" />
+                    <strong>{edu.score}</strong>
+                  </div>
+                </div>
 
-          <div className="timeline-item" key={index}>
+                <h3 className="education-degree-title">{edu.degree}</h3>
 
-            <div className="timeline-dot"></div>
+                <div className="institution-info">
+                  <span className="inst-name">{edu.institute}</span>
+                  <span className="inst-location">
+                    <FaMapMarkerAlt className="pin-icon" /> {edu.university}
+                  </span>
+                </div>
 
-            <div className="timeline-content">
-
-              <span className="year">{item.year}</span>
-
-              <h3>{item.degree}</h3>
-
-              <h4>{item.institute}</h4>
-
-              <p>{item.score}</p>
-
+                {edu.highlights && (
+                  <div className="education-highlights">
+                    <ul>
+                      {edu.highlights.map((h, hIdx) => (
+                        <li key={hIdx}>
+                          <FaCheck className="bullet-check" />
+                          <span>{h}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )}
+              </div>
             </div>
-
-          </div>
-
-        ))}
-
+          ))}
+        </div>
       </div>
-
     </section>
   );
 }

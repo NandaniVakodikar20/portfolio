@@ -1,0 +1,33 @@
+.section-header-block {
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.section-header-block.center-align {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.section-heading {
+  font-size: clamp(2rem, 4vw, 2.75rem);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--text-primary);
+  margin-bottom: 14px;
+  line-height: 1.2;
+}
+
+.section-subtext {
+  font-size: clamp(1rem, 1.8vw, 1.1rem);
+  color: var(--text-secondary);
+  max-width: 680px;
+  line-height: 1.65;
+}
+
+@media (max-width: 768px) {
+  .section-header-block {
+    margin-bottom: 35px;
+  }
+}

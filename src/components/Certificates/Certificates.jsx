@@ -1,66 +1,72 @@
 import "./Certificates.css";
-import { FaAward } from "react-icons/fa";
+import SectionHeader from "../UI/SectionHeader";
+import { FaAward, FaCalendarAlt, FaCheckCircle, FaCloud, FaCogs, FaBrain } from "react-icons/fa";
+import { certificatesData } from "../../data/portfolioData";
 
 function Certificates() {
-
-  const certificates = [
-
-    {
-      title: "Introduction to Cloud Computing",
-      provider: "Simplilearn SkillUp",
-      year: "2025"
-    },
-
-    {
-      title: "Introduction to DevOps Tools",
-      provider: "Simplilearn SkillUp",
-      year: "2025"
-    }
-
-  ];
+  const getCertIcon = (index) => {
+    if (index === 0) return <FaBrain />;
+    if (index === 1) return <FaCloud />;
+    return <FaCogs />;
+  };
 
   return (
+    <section className="certificates-section" id="certificates">
+      <SectionHeader
+        tag="CONTINUOUS LEARNING"
+        title="Professional"
+        highlight="Certifications"
+        subtitle="Validating theoretical knowledge with industry-recognized certifications in Generative AI, cloud computing, and DevOps."
+      />
 
-    <section className="certificates" id="certificates">
+      <div className="certificates-grid-container">
+        {certificatesData.map((cert, index) => (
+          <div className="certificate-editorial-card editorial-card" key={index}>
+            <div className="cert-top-row">
+              <div className="cert-icon-wrapper">
+                {getCertIcon(index)}
+              </div>
+              <div className="cert-meta-tags">
+                <span className="cert-category-badge">{cert.category}</span>
+                <span className="cert-year-badge">
+                  <FaCalendarAlt className="meta-ico" /> {cert.year}
+                </span>
+              </div>
+            </div>
 
-      <p className="section-tag">
-        CERTIFICATIONS
-      </p>
+            <div className="cert-main-info">
+              <h3 className="cert-title">{cert.title}</h3>
+              <div className="cert-issuer">
+                <FaAward className="award-ico" />
+                <span>Issuer: <strong>{cert.issuer}</strong></span>
+              </div>
+              <p className="cert-description">{cert.description}</p>
+            </div>
 
-      <h2 className="section-title">
-        My <span>Certificates</span>
-      </h2>
+            <div className="cert-skills-block">
+              <span className="skills-label">Core Competencies:</span>
+              <div className="cert-skills-chips">
+                {cert.skillsGained.map((skill, sIdx) => (
+                  <span key={sIdx} className="cert-skill-tag">
+                    {skill}
+                  </span>
+                ))}
+              </div>
+            </div>
 
-      <p className="certificate-description">
-        I continuously enhance my technical knowledge by completing industry-recognized certifications in cloud computing, DevOps, and modern software development.
-      </p>
-
-      <div className="certificate-grid">
-
-        {certificates.map((certificate, index) => (
-
-          <div className="certificate-card" key={index}>
-
-            <FaAward className="certificate-icon"/>
-
-            <h3>{certificate.title}</h3>
-
-            <p>{certificate.provider}</p>
-
-            <span className="certificate-year">
-              {certificate.year}
-            </span>
-
+            <div className="cert-footer-status">
+              <span className="verified-badge">
+                <FaCheckCircle className="check-ico" /> Verified Completion
+              </span>
+              <span className="skillup-mark">
+                {cert.issuer.includes("TCS") ? "TCS iON Career Edge" : "SkillUp Program"}
+              </span>
+            </div>
           </div>
-
         ))}
-
       </div>
-
     </section>
-
   );
-
 }
 
 export default Certificates;
